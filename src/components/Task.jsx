@@ -14,18 +14,19 @@ const Task = ({ task }) => {
     return (
         <div
             key={task.id}
-            className='bg-white p-2 rounded-md shadow-sm mb-2 cursor-move hover:shadow-lg touch-none'
+            className='bg-white rounded-md shadow-sm mb-2 cursor-move hover:shadow-lg touch-none'
             ref={setNodeRef}
             style={style}
             {...attributes}
             {...listeners}
         >
-            <div className='flex gap-3 items-center'>
+            <div className={`flex gap-3 items-center ${task.color} p-2 font-bold`}>
                 <input type="checkbox" name="" id="" />
-                <div className='text-sm  grow'>
-                    Serial: {task.id}
-                    Task: {task.content}
-                </div>
+                {
+                    <div className={`text-sm grow`}>
+                        {task.content}
+                    </div>
+                }
             </div>
 
         </div>
